@@ -18,4 +18,4 @@ Please enter those pages and watch YouTube videos to get  inspired
 •	https://www.imdb.com/
 •	https://www.rottentomatoes.com/
  Anime site
-  # https://myanimelist.net/
+   https://myanimelist.net/
