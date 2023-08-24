@@ -283,7 +283,7 @@ img.mv {
 .content {
     grid-area: 4/3;
     display: grid;
-    grid-template-rows: 100px 50px  1fr;
+    grid-template-rows: 100px 50px  1fr 50px 1fr;
 }
 .header {
     font-size: xx-large;
@@ -302,16 +302,15 @@ img.mv {
     margin-right: 15px;
     border-radius: 2px;
 }
-.moves {
+.moves,
+.watchlist {
     display: grid;
     grid-template-columns: repeat(6,1fr);
-    grid-template-rows: repeat(2,1fr);
     margin-top: 10px;
 }
 .move {
     background-color: #1a1a1a;
     margin: 0px 25px 25px 0px;
-    width: 186px;
 }
 .poster {
     display: flex;
@@ -381,12 +380,11 @@ a span:last-child {
     margin: 9px 42px;
     justify-content: center;
     color: #f6f6f6;
-    text-decoration: none;
     border-radius: 5px;
     transition-duration: 100ms;
     padding: 4px 7px;
 }
-a:hover{
+.action a:hover{
     background-color: #2c2c2c;;
 }
 .poster img {
@@ -400,6 +398,65 @@ a:hover{
 .info .name:hover {
     text-decoration: underline;
 }
+.loading {
+    position: absolute;
+    right: 50%;
+    text-align: center;
+    display: flex;
+}
+.loading span {
+    border-color: var(--theard_color);
+    border-width: 11px 11px;
+    border-style: solid;
+    border-radius: 50%;
+    margin: 51px 7px;
+    animation: loading 600ms infinite alternate;
+}
+.loading span:nth-child(2) {
+    animation-delay: 200ms
+}
+.loading span:last-child{
+    animation-delay: 400ms
+}
+@keyframes loading {
+    to{
+        opacity: 0.3;
+        transform: translateY(-20px);
+    }
+}
 footer {
     grid-area: 5/3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+}
+footer>a {
+    background-color: var(--theard_color);
+    color: var(--main_color);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}
+footer>a:hover{
+    background-color: #f5c518b7;
+}
+.social {
+    display: flex;
+}
+.social a {
+    margin: 1px 11px;
+    padding: 6px 10px;
+    color: white;
+    border-radius: 50%;
+}
+.social a:hover{
+    background: #ffffff21;
+}
+.copyright {
+    margin: 10px;
+    font-size: small;
+    opacity: 0.7;
 }
