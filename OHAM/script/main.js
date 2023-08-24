@@ -225,7 +225,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     mainDiv.appendChild(actionDiv);
 
-    // Append the main div to the document
     document.querySelector('.watchlist').appendChild(mainDiv);
 }
 
@@ -233,7 +232,7 @@ document.addEventListener("DOMContentLoaded", function () {
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", function () {
       createMovieElement(i);
-      
+      buttons[i].disabled = true;
     });
   }
 });
