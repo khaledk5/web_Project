@@ -208,6 +208,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var trailerLink = document.createElement("a");
     trailerLink.href = videolink;
+    trailerLink.target = "_blank";
     var playArrowSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     playArrowSvg.setAttribute("width", "24");
     playArrowSvg.setAttribute("height", "24");
@@ -235,4 +236,18 @@ document.addEventListener("DOMContentLoaded", function () {
       buttons[i].disabled = true;
     });
   }
+});
+document.addEventListener("DOMContentLoaded", function () {
+  function Search(){
+    for (let move of document.querySelectorAll('.move')) {
+      let str=move.querySelector('.name').textContent
+      if(str.search(document.getElementById('search').value)>-1){
+        move.style.display='block';
+      }else{
+        move.style.display='none';
+      }
+    }
+  }
+  document.querySelector(".iconsearch").addEventListener("click", Search);
+  setInterval(Search,1000);
 });
