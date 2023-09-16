@@ -28,21 +28,68 @@ body {
 nav {
     grid-column: 3;
     display: grid;
-    grid-template-columns: 70px 88px 1fr 70px 70px 50px;
+    grid-template-columns: 80px 10px 100px 1fr 100px 100px 80px;
     background-color: var(--second_color);
 }
 .menu {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;    
+    justify-content: center;
+    font-size: larger; 
+}
+.menu ul{
+    position: absolute;
+    transform: translate(4%, 183px);
+    z-index: 1;
+    list-style: none;
+    min-width: 12%;
+    padding: 14px 25px;
+    background-color: var(--second_color);
+    display: none;
+}
+ul div {
+    border: solid 3px transparent;
+    color: var(--theard_color);
+    text-align: center;
+    padding: 10px;
+    border-bottom-color: currentColor;
+    border-style: dashed;
+}
+.menu ul::before {
+    content: "";
+    border-color: transparent;
+    border-style: solid;
+    border-width: 8px;
+    position: absolute;
+    right: 0px;
+    bottom: 100%;
+    width: -moz-available;
+    width: -webkit-fill-available;
+}
+.menu:hover ul{
+    display: block;
+}
+.menu a {
+    padding: 10px;
+}
+.menu ul a span{
+    margin: 0;
+    opacity: 0;
+    transition: opacity 1s, margin 1s;
+}
+.menu ul a:hover span{
+    opacity: 1;
+    margin: 20px;
+    transition: opacity 1s, margin 1s;
 }
 .search {
     display: grid;
     grid-template-columns: 32px 1fr 32px;
+    margin: 0px 60px;
 }
 input[type="text"] {
-    margin: 12px 0px;
+    margin: 11px 0px;
     padding: 0px 56px;
     border-radius: 6.8px;
     border-style: hidden;
@@ -60,7 +107,7 @@ input[type="text"]:focus {
 .search :nth-child(1) div{
     position: relative;
     left: 40px;
-    padding: 8.5px 13px;
+    padding: 9.5px 15px;
     color: black;
     border-right: solid 1px;
 }
@@ -90,6 +137,7 @@ input[type="text"]:focus {
     margin: 13px 0px;
     border-radius: 7px;
     text-align: center;
+    transition-duration: 1000ms;
 }
 .login,
 .signup,
@@ -97,7 +145,7 @@ input[type="text"]:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+    font-size: larger;
 }
 
 .lang:hover ul{
@@ -116,6 +164,7 @@ input[type="text"]:focus {
 }
 li {
     display: flex;
+    justify-content: center;
 }
 input {
     cursor: pointer;
@@ -311,6 +360,11 @@ img.mv {
 .move {
     background-color: #1a1a1a;
     margin: 0px 25px 25px 0px;
+    transition-duration: 600ms;
+}
+.move:hover{
+    transform: scale(0.9);
+    transition-duration: 600ms;
 }
 .poster {
     display: flex;
