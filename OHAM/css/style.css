@@ -40,7 +40,7 @@ nav {
 }
 .menu ul{
     position: absolute;
-    transform: translate(4%, 183px);
+    transform: translate(4%, 212px);
     z-index: 1;
     list-style: none;
     min-width: 12%;
@@ -49,18 +49,22 @@ nav {
     display: none;
 }
 ul div {
-    border: solid 3px transparent;
+    border: solid 8px transparent;
     color: var(--theard_color);
     text-align: center;
-    padding: 10px;
+    padding-bottom: 12px;
     border-bottom-color: currentColor;
     border-style: dashed;
+    font-size: larger;
+    margin-bottom: 9px;
+    font-weight: 700;
+    opacity: 0.6;
 }
 .menu ul::before {
     content: "";
     border-color: transparent;
     border-style: solid;
-    border-width: 8px;
+    border-width: 16px;
     position: absolute;
     right: 0px;
     bottom: 100%;
@@ -69,6 +73,7 @@ ul div {
 }
 .menu:hover ul{
     display: block;
+    opacity: 0.95;
 }
 .menu a {
     padding: 10px;
@@ -77,11 +82,16 @@ ul div {
     margin: 0;
     opacity: 0;
     transition: opacity 1s, margin 1s;
+    color: #ffdf6d;
 }
 .menu ul a:hover span{
     opacity: 1;
     margin: 20px;
     transition: opacity 1s, margin 1s;
+}
+svg.ivb {
+    color: var(--theard_color);
+    font-size: larger;
 }
 .search {
     display: grid;
@@ -147,11 +157,9 @@ input[type="text"]:focus {
     justify-content: center;
     font-size: larger;
 }
-
 .lang:hover ul{
     display: block;
 }
-
 .lang ul{
     position: absolute;
     transform: translate(-82px, 104px);
@@ -200,7 +208,6 @@ label {
     cursor: pointer;
     
 }
-
 .lang::after{
     content: "";
     border-color: #ffffff transparent transparent transparent;
