@@ -46,7 +46,9 @@ nav {
     min-width: 12%;
     padding: 14px 25px;
     background-color: var(--second_color);
+    opacity: 0;
     display: none;
+    transition: opacity 1s;
 }
 ul div {
     border: solid 8px transparent;
@@ -72,8 +74,10 @@ ul div {
     width: -webkit-fill-available;
 }
 .menu:hover ul{
-    display: block;
+    
     opacity: 0.95;
+    transition: opacity 1s;
+    display: block;
 }
 .menu a {
     padding: 10px;
@@ -206,7 +210,7 @@ label {
     border-radius: 5px;
     margin: 10px 3px;
     cursor: pointer;
-    
+   
 }
 .lang::after{
     content: "";
@@ -360,14 +364,20 @@ img.mv {
 }
 .moves,
 .watchlist {
-    display: grid;
-    grid-template-columns: repeat(6,1fr);
+    display: flex;
     margin-top: 10px;
+    overflow-y: hidden;
+    margin-top: 10px;
+}
+.moves::-webkit-scrollbar,
+.watchlist::-webkit-scrollbar {
+    width: 0;
 }
 .move {
     background-color: #1a1a1a;
-    margin: 0px 25px 25px 0px;
+    margin-right: 25px;
     transition-duration: 600ms;
+    min-width: 217px;
 }
 .move:hover{
     transform: scale(0.9);
@@ -516,7 +526,7 @@ footer>a:hover{
 .social a:hover{
     background: #ffffff21;
 }
-.copyright {
+.copyright{
     margin: 10px;
     font-size: small;
     opacity: 0.7;

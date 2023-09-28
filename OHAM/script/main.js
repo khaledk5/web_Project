@@ -117,7 +117,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   const movies = document.querySelectorAll('.move');
-  
+  const buttons = document.querySelectorAll('button[type="AddToWatchList"]');
+  let removebuttons = document.querySelectorAll('button[type="RemoveFromWatchList"]');
+  // const removebuttons = [];
+
+
   function createMovieElement(index) {
     // Create main container div with class "move"
     document.querySelector('.loading').setAttribute('style','display: none')
@@ -227,16 +231,29 @@ document.addEventListener("DOMContentLoaded", function () {
     mainDiv.appendChild(actionDiv);
 
     document.querySelector('.watchlist').appendChild(mainDiv);
+    // remove function
+    removebuttons = document.querySelectorAll('button[type="RemoveFromWatchList"]');
+    for (let i = 0; i < removebuttons.length; i++) {
+      removebuttons[i].addEventListener("click", function () {
+        document.querySelector(".watchlist").removeChild(removebuttons[i].parentElement.parentElement);
+        buttons.forEach(element => {
+          if(element.parentElement.previousElementSibling.innerText===removebuttons[i].parentElement.previousElementSibling.innerText){
+            element.disabled = false;
+          }
+        });
+      });
+    }
 }
 
-  const buttons = document.querySelectorAll('button[type="AddToWatchList"]');
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", function () {
       createMovieElement(i);
       buttons[i].disabled = true;
     });
   }
+  
 });
+
 document.addEventListener("DOMContentLoaded", function () {
   function Search(){
     for (let move of document.querySelectorAll('.move')) {
