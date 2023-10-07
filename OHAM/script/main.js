@@ -268,3 +268,21 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelector(".iconsearch").addEventListener("click", Search);
   setInterval(Search,1000);
 });
+
+let scrollcontainer = document.querySelector(".moves");
+let nextArrow = document.querySelector(".icondisplay3");
+let backArrow = document.querySelector(".icondisplay4");
+backArrow.style.display="none";
+nextArrow.addEventListener("click", () => {
+  scrollcontainer.style.scrollBehavior="smooth";
+  nextArrow.style.display="none";
+  backArrow.style.display="block";
+  scrollcontainer.scrollLeft += 1100;
+});
+
+backArrow.addEventListener("click", () => {
+  scrollcontainer.style.scrollBehavior="smooth";
+  backArrow.style.display="none";
+  nextArrow.style.display="block";
+  scrollcontainer.scrollLeft -= 1100;
+});
