@@ -274,9 +274,12 @@ svg.icondisplay2 {
     border-radius: 5px;
     transition-duration: 300ms;
 }
+svg.icondisplay4:hover,
+svg.icondisplay3:hover,
 svg.icondisplay2:hover,
 svg.icondisplay:hover{
     color: var(--theard_color);
+    padding: 15px 10px;
 }
 thead {
     text-align: left;
@@ -530,4 +533,27 @@ footer>a:hover{
     margin: 10px;
     font-size: small;
     opacity: 0.7;
+}
+svg.icondisplay3 {
+    grid-area: 4/4;
+    position: relative;
+    right: -10%;
+    bottom: -30%;
+    background-color: #00000052;
+    padding: 10px 6px;
+    border: solid 1px #f6f6f6;
+    border-radius: 5px;
+    transition-duration: 300ms;
+}
+svg.icondisplay4 {
+    grid-area: 4/3;
+    position: relative;
+    transform: rotate(180deg);
+    right: 4%;
+    bottom: -30%;
+    background-color: #00000052;
+    padding: 10px 6px;
+    border: solid 1px #f6f6f6;
+    border-radius: 5px;
+    transition-duration: 300ms;
 }
