@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation Movies | Emad</title>
+    <!-- cSs style file -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Normalize file to rendering all elements -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <!-- call webfonts file to change icon size as fonts-->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- GoOgle fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;500;600;800&family=Work+Sans:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!--------------------------------- scrollbar --------------------------------->
+    <div id="progressbar"></div>
+    <div id="scrollpath"></div>
+    <!--------------------------------- nav-bar --------------------------------->
+    <header class="flex-div">
+      <div class="left-section flex-div">
+        <button class="toggle-menu">
+          <div></div>
+          <div class="second-div"></div>
+          <div></div>
+        </button>
+        <h4>ANIMATION <span>movies</span></h4>
+      </div>
+      <div class="mid-section flex-div">
+        <form class="flex-div">
+          <input
+            class="search-input"
+            type="text"
+            placeholder="Search"
+            onkeyup="search()"
+          />
+          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+      </div>
+      <div class="right-section flex-div">
+        <i class="fa-solid fa-user"></i>
+        <i class="fa-solid fa-circle-half-stroke"></i>
+      </div>
+    </header>
+    <!--------------------------------- side-bar --------------------------------->
+    <div class="side-bar" id="myBar">
+      <!-- cartoOn space -->
+      <!-- <div class="cartoon-space">CARTOON SPACE</div> -->
+      <div class="upper-section">
+        <a href=""
+          ><i class="fa-solid fa-house"></i>
+          <p>Home</p></a
+        >
+        <a href=""
+          ><i class="fa-solid fa-mosque"></i>
+          <p>Islamic</p></a
+        >
+        <a href=""
+          ><i class="fa-solid fa-masks-theater"></i>
+          <p>Comody</p></a
+        >
+        <a href=""
+          ><i class="fa-solid fa-bicycle"></i>
+          <p>Adventure</p></a
+        >
+        <a href=""
+          ><i class="fa-solid fa-handcuffs"></i>
+          <p>Crime</p></a
+        >
+        <a href=""
+          ><i class="fa-solid fa-people-group"></i>
+          <p>Family</p></a
+        >
+        <a href=""
+          ><i class="fa-solid fa-bomb"></i>
+          <p>Action</p></a
+        >
+        <br />
+        <hr />
+        <!-- <br /> -->
+      </div>
+      <!-- watch-list -->
+      <!-- <i class="fa-solid fa-angles-down"></i> -->
+      <div class="lower-section">
+        <h5>my watch list</h5>
+        <div class="toggle-icon"><i class="fa-solid fa-angles-up"></i></div>
+        <div class="my-watch-list">
+          <ul class="watch-list"></ul>
+        </div>
+      </div>
+    </div>
+    <!--------------------------------- start container --------------------------------->
+    <div class="container">
+      <ul>
+        <li>
+          <a href="#" data-text="&nbsp;Top 5 this week!"
+            >&nbsp;Top 5 this week!</a
+          >
+        </li>
+      </ul>
+      <div class="banner">
+        <img src="images/cars.jpg" alt="" />
+      </div>
+      <!-- ----------------------------------Cards------------------------------------- -->
+      <div class="cards">
+        <div class="card">
+          <a href="play-video.html">
+            <div class="img-frame">
+              <img src="images/batmaan.jpg" class="cardImage" />
+              <i class="fa-solid fa-play"></i>
+            </div>
+          </a>
+          <div class="vid-info">
+            <h2>Batman</h2>
+            <div class="rate">
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="empty far fa-star"></i>
+            </div>
+            <p>2021</p>
+            <button class="add-to-list">
+              <i class="fa-solid fa-plus"></i>my list
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <a href="play-video.html">
+            <div
+              class="img-frame"
+              onclick="changeVideoSource('videos/spiderMan.mp4')"
+            >
+              <img src="images/Spider-Man.jpg" class="cardImage" />
+              <i class="fa-solid fa-play"></i>
+            </div>
+          </a>
+          <div class="vid-info">
+            <h2>Spider-Man</h2>
+            <div class="rate">
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+            </div>
+            <p>2017</p>
+            <button class="add-to-list">
+              <i class="fa-solid fa-plus"></i>my list
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <a href="play-video.html">
+            <div class="img-frame">
+              <img src="images/tomandjerry.jpeg" class="cardImage" />
+              <i class="fa-solid fa-play"></i>
+            </div>
+          </a>
+          <div class="vid-info">
+            <h2>Tom and Jerry</h2>
+            <div class="rate">
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+            </div>
+            <p>2017</p>
+            <button class="add-to-list">
+              <i class="fa-solid fa-plus"></i>my list
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <a href="play-video.html">
+            <div
+              class="img-frame"
+              onclick="changeVideoSource('videos/Ratatouille.mp4')"
+            >
+              <img src="images/rata.jpeg" class="cardImage" />
+              <i class="fa-solid fa-play"></i>
+            </div>
+          </a>
+          <div class="vid-info">
+            <h2>Ratatouille</h2>
+            <div class="rate">
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="fa-regular fa-star fa-star-half-stroke"></i>
+            </div>
+            <p>2007</p>
+            <button class="add-to-list">
+              <i class="fa-solid fa-plus"></i>my list
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <a href="play-video.html">
+            <div
+              class="img-frame"
+              onclick="changeVideoSource('videos/ShauntheSheep.mp4')"
+            >
+              <img src="images/shaunzsheep.webp" class="cardImage" />
+              <i class="fa-solid fa-play"></i>
+            </div>
+          </a>
+          <div class="vid-info">
+            <h2>ShaunTheSheep</h2>
+            <div class="rate">
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="fa-regular fa-star fa-star-half-stroke"></i>
+              <i class="empty far fa-star"></i>
+            </div>
+            <p>1999</p>
+            <button class="add-to-list">
+              <i class="fa-solid fa-plus"></i>my list
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <a href="play-video.html">
+            <div class="img-frame">
+              <img src="images/ben10.jpeg" class="cardImage" />
+              <i class="fa-solid fa-play"></i>
+            </div>
+          </a>
+          <div class="vid-info">
+            <h2>Ben 10</h2>
+            <div class="rate">
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="empty far fa-star"></i>
+            </div>
+            <p>2014</p>
+            <button class="add-to-list">
+              <i class="fa-solid fa-plus"></i>my list
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <a href="play-video.html">
+            <div class="img-frame">
+              <img src="images/incredibles.jpeg" class="cardImage" />
+              <i class="fa-solid fa-play"></i>
+            </div>
+          </a>
+          <div class="vid-info">
+            <h2>Incredibles</h2>
+            <div class="rate">
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="empty far fa-star"></i>
+            </div>
+            <p>2022</p>
+            <button class="add-to-list">
+              <i class="fa-solid fa-plus"></i>my list
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <a href="play-video.html">
+            <div class="img-frame">
+              <img src="images/minions.jpeg" class="cardImage" />
+              <i class="fa-solid fa-play"></i>
+            </div>
+          </a>
+          <div class="vid-info">
+            <h2>Minions</h2>
+            <div class="rate">
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="empty far fa-star"></i>
+              <i class="empty far fa-star"></i>
+            </div>
+            <p>2015</p>
+            <button class="add-to-list">
+              <i class="fa-solid fa-plus"></i>my list
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <a href="play-video.html">
+            <div
+              class="img-frame"
+              onclick="changeVideoSource('videos/nemo.mp4')"
+            >
+              <img src="images/nemo.jpeg" class="cardImage" />
+              <i class="fa-solid fa-play"></i>
+            </div>
+          </a>
+          <div class="vid-info">
+            <h2>Finding Nemo</h2>
+            <div class="rate">
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="empty far fa-star"></i>
+            </div>
+            <p>2003</p>
+            <button class="add-to-list">
+              <i class="fa-solid fa-plus"></i>my list
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <a href="play-video.html">
+            <div
+              class="img-frame"
+              onclick="changeVideoSource('videos/spongebob.mp4')"
+            >
+              <img src="images/spong.jpeg" class="cardImage" />
+              <i class="fa-solid fa-play"></i>
+            </div>
+          </a>
+          <div class="vid-info">
+            <h2>SpongeBob</h2>
+            <div class="rate">
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+            </div>
+            <p>1999</p>
+            <button class="add-to-list">
+              <i class="fa-solid fa-plus"></i>my list
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <a href="play-video.html">
+            <div class="img-frame">
+              <img src="images/littlemermaid.jpeg" class="cardImage" />
+              <i class="fa-solid fa-play"></i>
+            </div>
+          </a>
+          <div class="vid-info">
+            <h2>Little-Mermaid</h2>
+            <div class="rate">
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="empty far fa-star"></i>
+            </div>
+            <p>2016</p>
+            <button class="add-to-list">
+              <i class="fa-solid fa-plus"></i>my list
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <a href="play-video.html">
+            <div class="img-frame">
+              <img src="images/peterpan.png" class="cardImage" />
+              <i class="fa-solid fa-play"></i>
+            </div>
+          </a>
+          <div class="vid-info">
+            <h2>Peter-Pan</h2>
+            <div class="rate">
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="empty far fa-star"></i>
+              <i class="empty far fa-star"></i>
+            </div>
+            <p>2012</p>
+            <button class="add-to-list">
+              <i class="fa-solid fa-plus"></i>my list
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- ----------------------------------Cards------------------------------------- -->
+    </div>
+    <!--------------------------------- end container --------------------------------->
+    <!-- javaScript file -->
+    <script src="scripts/script.js"></script>
+  </body>
+</html>
