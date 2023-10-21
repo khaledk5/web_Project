@@ -4,7 +4,6 @@ function submitForm() {
     // Get form elements
     var usernameInput = document.getElementById("username");
     var passwordInput = document.getElementById("password");
-    var errorMessage = document.getElementById("error-message");
     // Get form elements values
     var username = document.getElementById("username").value.trim();
     var password = document.getElementById("password").value.trim();
@@ -22,7 +21,7 @@ function submitForm() {
                 errorMessage.innerHTML = "";
             }else{
                 // User not found ,or Invalid username or password
-                errorMessage.innerHTML = "Invalid username or password.";
+                showError("Invalid username or password.");
                 removeError(usernameInput);
                 removeError(passwordInput);
                 addError(usernameInput);
@@ -45,4 +44,23 @@ function addError(inputElement) {
 
 function removeError(inputElement) {
     inputElement.classList.remove("invalid");
+}
+
+// Function to display the error message
+function showError(message) {
+    const errorDiv = document.getElementById('error-message');
+    errorDiv.textContent = message;
+    errorDiv.style.display = 'block';
+    errorDiv.style.opacity = 1;
+    // Hide the error message after 5 seconds
+    setTimeout('hideError()', 5000);
+}
+
+// Function to hide the error message
+function hideError() {
+    const errorDiv = document.getElementById('error-message');
+    errorDiv.style.opacity = 0;
+    setTimeout(() => {
+        errorDiv.style.display = 'none';
+      }, 3500);
 }

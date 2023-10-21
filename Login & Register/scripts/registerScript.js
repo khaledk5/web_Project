@@ -27,7 +27,7 @@ function submitForm() {
                 document.getElementById("error-message").innerHTML = "";
             }else{
                 // Username or Email already exists
-                document.getElementById("error-message").innerHTML = "Username or Email already exists!";
+                showError("Username or Email already exists!");
                 addError(document.getElementById("username"));
                 addError(document.getElementById("email"));
             }
@@ -47,7 +47,6 @@ function validateForm() {
     var emailInput = document.getElementById("email");
     var passwordInput = document.getElementById("password");
     var confirmPasswordInput = document.getElementById("confirm-password");
-    var errorMessage = document.getElementById("error-message");
     // Get form elements values
     var username = usernameInput.value.trim();
     var email = emailInput.value.trim();
@@ -60,32 +59,32 @@ function validateForm() {
     removeError(confirmPasswordInput);
 
     if (username.length < 8 || username.includes(" ")) {
-        errorMessage.innerHTML = "Username must be at least 8 characters long and should not contain spaces";
+        showError("Username must be at least 8 characters long and should not contain spaces");
         addError(usernameInput);
         return false;
     }
 
     if (!emailvalidation.test(String(email).toLowerCase())) {
-        errorMessage.innerHTML = "Invalid email address";
+        showError("Invalid email address");
         addError(emailInput);
         return false;
     }
 
     if (password.length < 8 || !/[A-Z]/.test(password) || !/[a-z]/.test(password)) {
-        errorMessage.innerHTML = "Password must be at least 8 characters long and contain at least one uppercase and one lowercase character.";
+        showError("Password must be at least 8 characters long and contain at least one uppercase and one lowercase character.");
         addError(passwordInput);
         return false;
     }
 
     if (password !== confirmPassword) {
-        errorMessage.innerHTML = "Password and Confirm Password do not match";
+        showError("Password and Confirm Password do not match");
         addError(passwordInput);
         addError(confirmPasswordInput);
         return false;
     }
 
-    // If all validations pass, clear the error message and reset border colors
-    errorMessage.innerHTML = "";
+    // If all validations pass, force hide error and reset border colors
+    hideError();
     return true;
 }
 
@@ -95,4 +94,23 @@ function addError(inputElement) {
 
 function removeError(inputElement) {
     inputElement.classList.remove("invalid");
+}
+
+// Function to display the error message
+function showError(message) {
+    const errorDiv = document.getElementById('error-message');
+    errorDiv.textContent = message;
+    errorDiv.style.display = 'block';
+    errorDiv.style.opacity = 1;
+    // Hide the error message after 5 seconds
+    setTimeout('hideError()', 5000);
+}
+
+// Function to hide the error message
+function hideError() {
+    const errorDiv = document.getElementById('error-message');
+    errorDiv.style.opacity = 0;
+    setTimeout(() => {
+        errorDiv.style.display = 'none';
+      }, 3500);
 }
