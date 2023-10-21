@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <script src="scripts/loginScript.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Login Form</h1>
+        <form id="login-form" onsubmit="return submitForm()">
+            <div class="field-holder">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="field-holder">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="pass" required>
+            </div>
+            <p class="error" id="error-message"></p>
+            <button type="submit" id="login-button">Login</button>
+        </form>
+        <p>Don't have an account? <a href="register.html" class="link">Register</a></p>
+    </div>
+</body>
+</html>
