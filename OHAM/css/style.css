@@ -40,15 +40,17 @@ nav {
 }
 .menu ul {
   position: absolute;
-  transform: translate(4%, 212px);
+  /* transform: translate(4%, 212px); */
   z-index: 1;
   list-style: none;
   min-width: 12%;
-  padding: 14px 25px;
+  padding: 0px;
   background-color: var(--second_color);
   opacity: 0;
-  display: none;
-  transition: opacity 1s;
+  /* display: none; */
+  height: 0px;
+  overflow: hidden;
+  transition: height 1s,transform 1s,opacity 1s;
 }
 ul div {
   border: solid 8px transparent;
@@ -74,9 +76,11 @@ ul div {
   width: -webkit-fill-available;
 }
 .menu:hover ul {
-  opacity: 0.95;
-  transition: opacity 1s;
-  display: block;
+  opacity: 1;
+  padding: 14px 25px;
+  transform: translate(4%, 212px);
+  height: 333px;
+  transition: height 1s,transform 1s,opacity 500ms;
 }
 .menu a {
   padding: 10px;
